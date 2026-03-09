@@ -1,0 +1,10 @@
+.vscode/
+# Maven
+target/
+
+#Logs
+logs/
+
+#Test Report
+reports/
+
