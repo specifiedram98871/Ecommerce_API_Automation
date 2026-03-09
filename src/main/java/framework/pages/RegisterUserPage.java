@@ -56,6 +56,7 @@ public class RegisterUserPage {
     }
 
     public void enterName(String name) {
+        driver.findElement(nameInput).clear();
         driver.findElement(nameInput).sendKeys(name);
     }
 
