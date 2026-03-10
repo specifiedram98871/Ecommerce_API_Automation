@@ -1,9 +1,9 @@
 package framework.utils;
 
 public class TestData {
-    public static String validEmail ="validemail@test.com";
+    public static String validEmail ="user1test@gmail.com";
     public static String TITLE = "Mr";
-    public static String NAME = "John Doe";
+    public static String NAME = "testUser";
     public static String PASSWORD = "Test@123";
 
     public static String FIRST_NAME = "John";
