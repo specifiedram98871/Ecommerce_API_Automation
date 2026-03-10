@@ -5,6 +5,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ProductPage extends BasePage{
 
@@ -19,7 +22,8 @@ public class ProductPage extends BasePage{
     }
 
     public void clickViewProduct() {
-        WebElement product = driver.findElement(viewProduct);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebElement product = wait.until(ExpectedConditions.elementToBeClickable(viewProduct));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", product);
          product.click();
     }
