@@ -27,12 +27,13 @@ public class BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    // Reusable actions
+    // Reusable actions methods
     protected void click(By locator){
         waitForElement(locator).click();
     }
 
     protected void type(By locator, String text){
+        waitForElement(locator).clear();
         waitForElement(locator).sendKeys(text);
     }
 
