@@ -18,7 +18,7 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         // Headless mode for CI
-        options.addArguments("--headless"); 
+        options.addArguments("--headless=new"); 
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920,1080");
 
