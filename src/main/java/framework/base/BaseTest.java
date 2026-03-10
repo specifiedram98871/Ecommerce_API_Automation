@@ -2,6 +2,7 @@ package framework.base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -15,6 +16,16 @@ public class BaseTest {
     public void setup() {
 
         WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        // Headless mode for CI
+        options.addArguments("--headless"); 
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1920,1080");
+
+        //  Linux runners (GitHub Actions)
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
