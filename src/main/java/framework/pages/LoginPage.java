@@ -2,7 +2,7 @@ package framework.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import framework.utils.ConfigReader;;
+import framework.utils.ConfigReader;
 public class LoginPage extends BasePage {
     By regnameInput = By.cssSelector("input[data-qa='signup-name']");
     By regemailInput = By.cssSelector("input[data-qa='signup-email']");

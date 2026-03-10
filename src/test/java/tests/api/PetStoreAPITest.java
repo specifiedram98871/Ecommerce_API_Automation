@@ -16,6 +16,7 @@ public class PetStoreAPITest {
     public void setUp() {
         petService = new PetService();
     }
+
     @Test(description="Verify that a user can add a pet to the store", priority = 1)
     public void testAddPet() {
 
@@ -30,6 +31,7 @@ public class PetStoreAPITest {
         petStatus = addResponse.jsonPath().getString("status");
         petName = addResponse.jsonPath().getString("name");
     }
+    
     @Test(description="Verify that a user can get a pet by status", priority = 2, dependsOnMethods = "testAddPet")
     
     public void testGetPet() {
