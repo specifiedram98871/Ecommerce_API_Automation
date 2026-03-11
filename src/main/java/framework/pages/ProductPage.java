@@ -24,7 +24,7 @@ public class ProductPage extends BasePage{
     }
 
     public void clickViewProduct() {
-        System.out.println(driver.getPageSource());
+        // System.out.println(driver.getPageSource());
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement product = wait.until(ExpectedConditions.elementToBeClickable(viewProduct));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", product);
