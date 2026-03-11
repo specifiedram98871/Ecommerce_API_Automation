@@ -26,6 +26,7 @@ public class ProductPage extends BasePage{
         WebElement product = wait.until(ExpectedConditions.elementToBeClickable(viewProduct));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", product);
          product.click();
+         wait.until(ExpectedConditions.urlContains("product_details"));
     }
     public void setQuantity(String qty) {
         type(quantityInput,qty);
