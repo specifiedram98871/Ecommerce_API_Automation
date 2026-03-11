@@ -23,14 +23,23 @@ public class ProductPage extends BasePage{
         super(driver);
     }
 
-    public void clickViewProduct() {
-        // System.out.println(driver.getPageSource());
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        WebElement product = wait.until(ExpectedConditions.elementToBeClickable(viewProduct));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", product);
-         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", product);
-         wait.until(ExpectedConditions.urlContains("product_details"));
-    }
+   public void clickViewProduct() {
+
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+    WebElement product = wait.until(
+            ExpectedConditions.visibilityOfElementLocated(
+                    By.cssSelector("a[href*='product_details']")
+            )
+    );
+
+    ((JavascriptExecutor) driver)
+            .executeScript("arguments[0].scrollIntoView({block:'center'});", product);
+
+    product.click();
+
+    wait.until(ExpectedConditions.urlContains("product_details"));
+}
     public void setQuantity(String qty) {
         type(quantityInput,qty);
     }
