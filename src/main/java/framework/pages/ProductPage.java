@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class ProductPage extends BasePage{
 
-    private By viewProduct = By.cssSelector("div.choose a[href='/product_details/1']");
+    private By viewProduct = By.xpath("(//div[@class='choose']//a[contains(text(),'View Product')])[1]");
     private By quantityInput  = By.id("quantity");
     private By addToCart = By.cssSelector("button.cart");
     private By modalConfirm = By.cssSelector(".modal-dialog.modal-confirm");
@@ -24,6 +24,7 @@ public class ProductPage extends BasePage{
     }
 
     public void clickViewProduct() {
+        System.out.println(driver.getPageSource());
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement product = wait.until(ExpectedConditions.elementToBeClickable(viewProduct));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", product);
