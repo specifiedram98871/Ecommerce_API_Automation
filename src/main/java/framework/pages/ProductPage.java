@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class ProductPage extends BasePage{
 
-    private By viewProduct = By.cssSelector("a[href='/product_details/1']");
+    private By viewProduct = By.cssSelector("div.choose a[href='/product_details/1']")
     private By quantityInput  = By.id("quantity");
     private By addToCart = By.cssSelector("button.cart");
     private By modalConfirm = By.cssSelector(".modal-dialog.modal-confirm");
