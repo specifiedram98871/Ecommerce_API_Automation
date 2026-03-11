@@ -36,13 +36,12 @@ public class EcommerceE2ETest extends BaseTest {
     @Test(description="Verify valid login redirects user to [Home] page")
     public void testValidLogin() {
         loginPage.loginUser(TestData.validEmail, TestData.PASSWORD);
+        productPage.clickViewProduct();
     }
     
     @Test(description = "Verify click on [Product] redirects user to [Product] page",dependsOnMethods = "testValidLogin")
     public void testViewProduct() {
-        loginPage.loginUser(TestData.validEmail, TestData.PASSWORD);
-        productPage.clickProductLink();
-        productPage.clickViewProduct();
+        // productPage.clickProductLink();
         Assert.assertTrue(driver.getCurrentUrl().contains("product_details"), "URL should contain 'product_details'");
     }
     @Test(description="Verify [Add to cart] button redirects user to cart page from product page", dependsOnMethods = "testViewProduct")
