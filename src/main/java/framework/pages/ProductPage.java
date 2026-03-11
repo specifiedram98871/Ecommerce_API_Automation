@@ -17,6 +17,8 @@ public class ProductPage extends BasePage{
     private By modalConfirm = By.cssSelector(".modal-dialog.modal-confirm");
     private By continueShopping = By.xpath("//button[contains(text(),'Continue Shopping')]");
     private By cart = By.linkText("View Cart");
+    private By productLink = By.cssSelector("a[href='/products']");
+
     public ProductPage(WebDriver driver) {
         super(driver);
     }
@@ -50,5 +52,8 @@ public class ProductPage extends BasePage{
     }
     public void clickViewCart() {
         click(cart);
+    }
+    public void clickProductLink() {
+        click(productLink);
     }
 }

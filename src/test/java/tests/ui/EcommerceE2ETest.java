@@ -36,7 +36,7 @@ public class EcommerceE2ETest extends BaseTest {
     @Test(description="Verify valid login redirects user to [Home] page")
     public void testValidLogin() {
         loginPage.loginUser(TestData.validEmail, TestData.PASSWORD);
-        
+        productPage.clickProductLink();
     }
 
     @Test(description = "Verify click on [Product] redirects user to [Product] page",dependsOnMethods = "testValidLogin")
